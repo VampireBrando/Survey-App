@@ -1,0 +1,119 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+body {
+    color: #292829;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #292829;
+    margin: 0 auto; /* Center the content */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.container {
+    width: 80%;
+    background-color: #d6c0ae;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating label {
+    height: 10px;
+    width: 20%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn {
+    border: 2px solid #c4a44d;
+    background-color: #292829;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #bdb099;
+    outline: none;
+}
+
+.subject-name {
+    text-align: center;
+}
+
+.btn-grid {
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-five {
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn:hover {
+    border-color: #748530;
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.image {
+    border: 2px solid #c4a44d;
+    border-radius: 3px;
+    max-width: 30%;
+    height: auto;
+}
+
+.hide {
+    display: none;
+}
+.loading-bar {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    background-color: #a65a66;
+    border: 2px solid #292829;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 60%;
+    
+  }
+  .loading-fill {
+    height: 30px;
+    width: 0; /* Initial width is 0 */
+    background-color: #677b80;
+    color: #bdb099;
+    text-align: right; /* Center text horizontally */
+    line-height: 30px; /* Center text vertically */
+    transition: width 0.5s ease; /* Smooth transition */
+  }

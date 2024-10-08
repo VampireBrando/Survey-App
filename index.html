@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>Survey App</title>
+</head>
+<body>
+    <div class="container">
+        <div id="experience" class="hide">
+            <div style="text-align: center;font-size: large;">
+                <b>Giving a score to your composition and image cropping experience.</b>
+                <br>
+                (1-5, higher scores represent more experience in considering photography composition when cropping images.)
+            </div>
+            <br>
+            <div id="exp-answer" class="btn-five">
+                <button class="btn" id="exp1">1</button>
+                <button class="btn" id="exp2">2</button>
+                <button class="btn" id="exp3">3</button>
+                <button class="btn" id="exp4">4</button>
+                <button class="btn" id="exp5">5</button>
+            </div>
+            
+        </div>
+        <div id="information" class="hide">
+            <div style="text-align: center; font-size: large;">
+                Image cropping is highly subjective and its results' diversity derives from possible different <br>
+                subjective intentions of the user: <b>modification</b>(the left image) and <b>highlight</b>(the right image). The<br>
+                modification category means that the user substantially satisfies the overall composition of an <br>
+                original image while intends to retain most of the content and makes simple modification. For <br>
+                highlight category, the user intends to break the original composition and highlight certain objects <br>
+                or scenes of the image so that the content is cropped to a large extent.
+            </div>
+            <br>
+            <div class="imagecontainer">
+                <img src="modification.jpg" alt="" class="image" style="max-width: 40%;">
+                <img src="highlight.jpg" alt="" class="image" style="max-width: 40%;">
+            </div>
+            <br>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button class="btn next-btn" id="next-btn" style="text-align: center;">Next</button>
+            </div>
+        </div>
+        <div id="subject-intent" class="hide">
+            <div style="text-align: center; font-size: large;">
+                Do you have the subjective intents introduced above when cropping an image?
+            </div>
+            <br>
+            <div class="btn-grid">
+                <button id="yes-btn" class="btn">Yes</button>
+                <button id="no-btn" class="btn">No</button>
+            </div>
+        </div>
+        <div id="question-container" class="hide">
+            <div style="text-align: center; font-size: large;">
+                Which category do you think the image cropping results prefer?<br><br>
+            </div>
+            <div class="imagecontainer">
+                <img src="" id="ori" class="image">
+                <img src="" id="crop" class="image">
+                <img src="" id="cropped" class="image">
+            </div>
+            <div class="btn-grid">
+                <button class="btn" id="modi-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">modification</button>
+                <button class="btn" id="high-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">highlight</button>
+                <!--loading bare-->
+                <div class="loading-bar" style="text-align: center;">
+                    <div class="loading-fill" id="loadingFill">
+                        0%
+                    </div>
+                </div>
+                <!--ddddddddddddddddddddddddddddddddddd-->
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn" style="text-align: center;">Start</button>
+        </div>
+        <div class="hide" id="exit" style="text-align: center; font-size: larger;">
+            <br>
+            <b>Thank you for your participation.</b>
+            <br>
+            <button style="margin-top: 10px;" class="btn" onclick="saveArrayAsTxtFile(answerArray, 'Result ' , expScore , subjectIntent ) ; startCountdown()">EXIT</button>
+            <br>
+        </div>
+    </div>
+</body>
+</html>
