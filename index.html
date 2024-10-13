@@ -29,14 +29,15 @@
         </div>
         <div id="information" class="hide">
             <div style="text-align: center; font-size: large;">
-                Image cropping is highly subjective and its results' diversity derives from possible different <br>
-                subjective intentions of the user: <b>modification</b>(the left image) and <b>highlight</b>(the right image). The<br>
-                modification category means that the user substantially satisfies the overall composition of an <br>
-                original image while intends to retain most of the content and makes simple modification. For <br>
-                highlight category, the user intends to break the original composition and highlight certain objects <br>
+                <p style="text-align: justify;">
+                Image cropping is highly subjective and its results' diversity derives from possible different 
+                subjective intentions of the user: <b>modification</b>(the left image) and <b>highlight</b>(the right image). The
+                modification category means that the user substantially satisfies the overall composition of an 
+                original image while intends to retain most of the content and makes simple modification. For 
+                highlight category, the user intends to break the original composition and highlight certain objects 
                 or scenes of the image so that the content is cropped to a large extent.
+                </p>
             </div>
-            <br>
             <div class="imagecontainer">
                 <img src="modification.jpg" loading="eager" alt="" class="image" style="max-width: 40%;">
                 <img src="highlight.jpg" loading="eager" alt="" class="image" style="max-width: 40%;">
@@ -48,7 +49,7 @@
         </div>
         <div id="subject-intent" class="hide">
             <div style="text-align: center; font-size: large;">
-                Do you have the subjective intents introduced above when cropping an image?
+                Do you have the subjective intents(modification and highlight) introduced above when cropping an image?
             </div>
             <br>
             <div class="btn-grid">
@@ -81,10 +82,12 @@
             <button id="start-btn" class="start-btn btn" style="text-align: center;">Start</button>
         </div>
         <div class="hide" id="exit" style="text-align: center; font-size: larger;">
-            <br>
             <b>Thank you for your participation.</b>
             <br>
-            <button style="margin-top: 10px;" class="btn" onclick="saveArrayAsTxtFile(answerArray, 'Result ' , expScore , subjectIntent ) ; startCountdown()">EXIT</button>
+            <br>
+            <input type="text" id="nameBox" placeholder="Enter your name" class="btn">
+            <br>
+            <button style="margin-top: 10px;" class="btn next-btn" onclick="saveArrayAsTxtFile(answerArray, expScore , subjectIntent ); startCountdown()">Exit</button>
             <br>
         </div>
     </div>

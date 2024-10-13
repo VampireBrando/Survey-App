@@ -108,6 +108,7 @@ const exitScreenElement = document.getElementById('exit');
 const questionContainerElement = document.getElementById('question-container');
 const modiButton = document.getElementById('modi-btn');
 const highButton = document.getElementById('high-btn');
+const nameBox = document.getElementById('nameBox');
 
 //input that need to be written
 let expScore;
@@ -218,27 +219,32 @@ function exitScreen() {
 };
 
 // function to save the txt file:::
-function saveArrayAsTxtFile(arrayData, fileName, sc , int ) {
-    arrayData.unshift('');
-    arrayData.unshift('score:' + sc );
-    arrayData.unshift('subject Intention:' + int);
+function saveArrayAsTxtFile(arrayData, sc , int ) {
+    if(nameBox.value === '') {
+        alert('You must write something!');
+    } else {
+        let fileName = nameBox.value;
+        arrayData.unshift('');
+        arrayData.unshift('score:' + sc );
+        arrayData.unshift('subject Intention:' + int);
 
-  // Convert the array to a string with each element on a new line
-  const content = arrayData.join('\n');
+        // Convert the array to a string with each element on a new line
+        const content = arrayData.join('\n');
 
-  // Create a Blob with the string content
-  const blob = new Blob([content], { type: 'text/plain' });
+        // Create a Blob with the string content
+        const blob = new Blob([content], { type: 'text/plain' });
 
-  // Create an anchor element to trigger the download
-  const link = document.createElement('a');
-  link.download = fileName;  // Set the desired file name
-  link.href = URL.createObjectURL(blob); // Create a URL for the Blob
+        // Create an anchor element to trigger the download
+        const link = document.createElement('a');
+        link.download = fileName;  // Set the desired file name
+        link.href = URL.createObjectURL(blob); // Create a URL for the Blob
 
-  // Programmatically click the anchor to trigger the download
-  link.click();
+        // Programmatically click the anchor to trigger the download
+        link.click();
 
-  // Clean up by revoking the object URL
-  URL.revokeObjectURL(link.href);
+        // Clean up by revoking the object URL
+        URL.revokeObjectURL(link.href);
+    };
 };
 
     //              currIndex / randomQuestions.length  loading bare 
@@ -256,12 +262,16 @@ function updateLoadingBar(curInd , randLen ) {
 };
 
 function startCountdown() {
-    // Set a timeout to exit the code after 10 seconds
-    setTimeout(() => {
-      console.log("Exiting the code...");
-      // Here, you can add any cleanup or exit logic if needed
-    }, 9000); // 10000 milliseconds = 10 seconds
-    console.log("Restarting the code...");
-    // Optionally, you can reset any other state here
-    window.location.reload(); // Reloads the page to restart everything
+    if(nameBox.value === '') {
+        alert('You must write something!');
+    } else {
+        // Set a timeout to exit the code after 10 seconds
+        setTimeout(() => {
+        console.log("Exiting the code...");
+        // Here, you can add any cleanup or exit logic if needed
+        }, 9000); // 10000 milliseconds = 10 seconds
+        console.log("Restarting the code...");
+        // Optionally, you can reset any other state here
+        window.location.reload(); // Reloads the page to restart everything
+    };
 };
