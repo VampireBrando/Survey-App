@@ -257,7 +257,6 @@ function updateLoadingBar(curInd , randLen ) {
     // Update the width of the loading fill element
     const loadingFill = document.getElementById('loadingFill');
     loadingFill.style.width = percentage + '%'; // Set the width based on percentage
-    loadingFill.textContent = percentage + '%'; 
     console.log(`Loading bar set to ${percentage}%`);
 };
 
