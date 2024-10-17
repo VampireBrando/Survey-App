@@ -61,13 +61,18 @@
             </div>
         </div>
         <div id="question-container" class="hide">
-            <div style="text-align: center; font-size: large;">
-                Which category do you think the image cropping results prefer?<br><br>
-            </div>
             <div class="imagecontainer">
                 <img src="" id="ori" class="image" loading="eager">
                 <img src="" id="crop" class="image" loading="eager">
                 <img src="" id="cropped" class="image" loading="eager">
+            </div>
+            <div class=" imagecontainer" style="gap: 25%;">
+                <p><b>Source image</b></p>
+                <p><b>Crop in the image</b></p>
+                <p><b>Cropped image</b></p>
+            </div>
+            <div style="text-align: center; font-size: large;margin-top: 15px;">
+                <b>Which category do you think the image cropping results prefer?<b><br>
             </div>
             <div class="btn-grid">
                 <button class="btn" id="modi-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">modification</button>
