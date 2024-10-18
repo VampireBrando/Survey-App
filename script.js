@@ -92,6 +92,10 @@ const questions = [
 let randomQuestions = shuffleArray(questions);
 let currIndex = 0;
 
+const preQuestions = ['modification', 'highlight'];
+let sumChecker = 0;
+let currPreIndex = 0;
+
 const startButton = document.getElementById('start-btn');
 const experience = document.getElementById('experience');
 const exp1 = document.getElementById('exp1');
@@ -101,6 +105,9 @@ const exp4 = document.getElementById('exp4');
 const exp5 = document.getElementById('exp5');
 const information = document.getElementById('information');
 const nextInfo = document.getElementById('next-btn');
+const preTestElement = document.getElementById('pre-test');
+const modiPreButton = document.getElementById('modi-pre-btn');
+const highPreButton = document.getElementById('high-pre-btn');
 const subjectIntentElement = document.getElementById('subject-intent');
 const yesButton = document.getElementById('yes-btn');
 const noButton = document.getElementById('no-btn');
@@ -121,7 +128,9 @@ exp2.addEventListener('click', exp2Click);
 exp3.addEventListener('click', exp3Click);
 exp4.addEventListener('click', exp4Click);
 exp5.addEventListener('click', exp5Click);
-nextInfo.addEventListener('click', showIntent);
+nextInfo.addEventListener('click', showPreSurvey);
+modiPreButton.addEventListener('click', modiPreAnswer);
+highPreButton.addEventListener('click', highPreAnswer);
 yesButton.addEventListener('click', showSurvey);
 noButton.addEventListener('click', exitScreen);
 modiButton.addEventListener('click', modiAnswer);
@@ -160,11 +169,58 @@ function exp5Click() {
 
 function showInfo() {
     experience.classList.add('hide');
+    if (preTestElement.classList.contains('hide') == false) {
+        preTestElement.classList.add('hide');
+    };
     information.classList.remove('hide');
 };
 
-function showIntent () {
+function showPreSurvey() {
+    console.log('next');
     information.classList.add('hide');
+    preTestElement.classList.remove('hide');
+    setNextPreQuestion();
+};
+
+function setNextPreQuestion() {
+    if (currPreIndex < preQuestions.length) {
+        showPreQuestion(currPreIndex);
+    } else if (sumChecker == 2) {
+        showIntent();
+    } else {
+        showInfo();
+        currPreIndex = 0;
+        sumChecker = 0;
+    };
+};
+
+function modiPreAnswer() {
+    if (currPreIndex == 0) {
+        sumChecker++;
+    }
+    currPreIndex++;
+    setNextPreQuestion();
+};
+
+function highPreAnswer() {
+    if (currPreIndex == 1) {
+        sumChecker++;
+    }
+    currPreIndex++;
+    setNextPreQuestion();
+};
+
+function showPreQuestion(index) {
+    document.getElementById('ori-pre').src 
+    = 'pre_test/' + preQuestions[index] + '/ori.jpg';
+    document.getElementById('crop-pre').src 
+    = 'pre_test/' + preQuestions[index] + '/crop.jpg';
+    document.getElementById('cropped-pre').src 
+    = 'pre_test/' + preQuestions[index] + '/cropped.jpg';
+};
+
+function showIntent () {
+    preTestElement.classList.add('hide');
     subjectIntentElement.classList.remove('hide');
 }
 
