@@ -13,11 +13,16 @@
     <div class="container">
         <div id="experience" class="hide">
             <div style="text-align: center;font-size: large;">
-                Giving a score to your <b>photography</b> composition and image cropping experience.
-                <br>
-                (1-5, higher scores represent more experience in considering photography composition when cropping images.)
+                <p>
+                    Image cropping is the removal of unwanted outer areas from a photographic or illustrated image. 
+                </p>
+                <p>
+                    Giving a score to your <b>photography</b> composition and image cropping experience.
+                </p>
+                <p style="margin-bottom: 50px;">
+                    (1-5, higher scores represent more experience in considering photography composition when cropping images.)
+                </p>
             </div>
-            <br>
             <div id="exp-answer" class="btn-five">
                 <button class="btn" id="exp1">1</button>
                 <button class="btn" id="exp2">2</button>
@@ -30,29 +35,28 @@
         <div id="information" class="hide">
             <div style="text-align: center; font-size: large;">
                 <p style="text-align: justify;">
-                Image cropping is highly subjective and its results' diversity derives from possible different 
-                subjective intentions of the user: <b>modification</b> and <b>highlight</b>. The
-                modification category means that the user substantially satisfies the overall composition of an 
-                original image while intends to retain most of the content and makes simple modification. For 
-                highlight category, the user intends to break the original composition and highlight certain objects 
-                or scenes of the image so that the content is cropped to a large extent.
+                    Image cropping is highly subjective and its results' diversity derives from possible different subjective intentions of the user: modification and highlight. The modification category means that the user substantially satisfies the overall composition of an original image while intends to retain most of the content and makes simple modification. For highlight category, the user intends to break the original composition and highlight certain objects or scenes of the image so that the content is cropped to a large extent. 
                 </p>
             </div>
             <div class="imagecontainer">
-                <img src="modification.jpg" loading="eager" alt="" class="image" style="max-width: 40%;">
-                <img src="highlight.jpg" loading="eager" alt="" class="image" style="max-width: 40%;">
+                <div class="text-image">
+                    <img src="modification.jpg" loading="eager" alt="" class="image" style="max-width: 80%;">
+                    <div class="centered">Modification</div>
+                </div>
+                <div class="text-image">
+                    <img src="highlight.jpg" loading="eager" alt="" class="image" style="max-width: 80%;">
+                    <div class="centered">Highlight</div>
+                </div>
             </div>
-            <div class=" imagecontainer" style="gap: 35%;">
-                <p><b>modification</b></p>
-                <p><b>highlight</b></p>
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
                 <button class="btn next-btn" id="next-btn" style="text-align: center;">Next</button>
             </div>
         </div>
         <div id="subject-intent" class="hide">
-            <div style="text-align: center; font-size: large;">
-                Do you have the subjective intents(modification and highlight) introduced above when cropping an image?
+            <div style="text-align: center; font-size: larger;">
+                <b>
+                    Do you have the subjective intents(modification and highlight) introduced above when cropping an image?
+                </b>
             </div>
             <br>
             <div class="btn-grid">
@@ -62,26 +66,28 @@
         </div>
         <div id="question-container" class="hide">
             <div class="imagecontainer">
-                <img src="" id="ori" class="image" loading="eager">
-                <img src="" id="crop" class="image" loading="eager">
-                <img src="" id="cropped" class="image" loading="eager">
+                <div class="text-image">
+                    <img src="" id="ori" class="image" loading="eager">
+                    <div class="centered">Source image</div>
+                </div>
+                <div class="text-image">
+                    <img src="" id="crop" class="image" loading="eager">
+                    <div class="centered">Crop in image</div>
+                </div>
+                <div class="text-image">
+                    <img src="" id="cropped" class="image" loading="eager">
+                    <div class="centered">Cropped image</div>
+                </div>
             </div>
-            <div class=" imagecontainer" style="gap: 25%;">
-                <p><b>Source image</b></p>
-                <p><b>Crop in the image</b></p>
-                <p><b>Cropped image</b></p>
-            </div>
-            <div style="text-align: center; font-size: large;margin-top: 15px;">
+            <div style="text-align: center; font-size: medium; margin-top: 15px; margin-bottom: -10px;">
                 <b>Which category do you think the image cropping results prefer?<b><br>
             </div>
             <div class="btn-grid">
-                <button class="btn" id="modi-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">modification</button>
-                <button class="btn" id="high-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">highlight</button>
+                <button class="btn" id="modi-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">Modification</button>
+                <button class="btn" id="high-btn" onclick="updateLoadingBar(currIndex , randomQuestions.length )">Highlight</button>
                 <!--loading bare-->
                 <div class="loading-bar" style="text-align: center;">
-                    <div class="loading-fill" id="loadingFill">
-                       
-                    </div>
+                    <div class="loading-fill" id="loadingFill"></div>
                 </div>
                 <!--ddddddddddddddddddddddddddddddddddd-->
             </div>

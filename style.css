@@ -85,13 +85,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    text-align: center;
+    gap: 50px;
 }
+
 .image {
     border: 2px solid #c4a44d;
     border-radius: 3px;
-    max-width: 30%;
+    max-width: 275px;
     height: auto;
+}
+
+.text-image {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.centered {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hide {
