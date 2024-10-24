@@ -92,9 +92,11 @@ const questions = [
 let randomQuestions = shuffleArray(questions);
 let currIndex = 0;
 
-const preQuestions = ['modification', 'highlight'];
+const preQuestions = ['modification_', 'highlight_'];
 let sumChecker = 0;
 let currPreIndex = 0;
+let modiPreIndex = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+let highPreIndex = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
 
 const startButton = document.getElementById('start-btn');
 const experience = document.getElementById('experience');
@@ -211,12 +213,17 @@ function highPreAnswer() {
 };
 
 function showPreQuestion(index) {
-    document.getElementById('ori-pre').src 
-    = 'pre_test/' + preQuestions[index] + '/ori.jpg';
-    document.getElementById('crop-pre').src 
-    = 'pre_test/' + preQuestions[index] + '/crop.jpg';
-    document.getElementById('cropped-pre').src 
-    = 'pre_test/' + preQuestions[index] + '/cropped.jpg';
+    if(index % 2 == 0){
+        let imgPreIndex = modiPreIndex;
+        document.getElementById('ori-pre').src =        'pre_test/' + preQuestions[index] + imgPreIndex + '/ori.jpg';
+        document.getElementById('crop-pre').src =       'pre_test/' + preQuestions[index] + imgPreIndex + '/crop.jpg';
+        document.getElementById('cropped-pre').src =    'pre_test/' + preQuestions[index] + imgPreIndex + '/cropped.jpg';
+    } else {
+        let imgPreIndex = highPreIndex;
+        document.getElementById('ori-pre').src =        'pre_test/' + preQuestions[index] + imgPreIndex + '/ori.jpg';
+        document.getElementById('crop-pre').src =       'pre_test/' + preQuestions[index] + imgPreIndex + '/crop.jpg';
+        document.getElementById('cropped-pre').src =    'pre_test/' + preQuestions[index] + imgPreIndex + '/cropped.jpg';
+    };
 };
 
 function showIntent () {
